@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tower Defense</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="hud">
+      <div class="hud-stat" id="stat-gold">💰 <span id="gold">150</span></div>
+      <div class="hud-stat" id="stat-lives">❤️ <span id="lives">20</span></div>
+      <div class="hud-stat" id="stat-wave">🌊 Wave <span id="wave">0</span>/<span id="wave-max">20</span></div>
+      <button id="start-wave-btn">Start Wave</button>
+      <button id="speed-btn">1x</button>
+      <div class="hud-stat" id="stat-status"></div>
+    </header>
+
+    <main id="game-area">
+      <canvas id="game-canvas" width="800" height="520"></canvas>
+      <aside id="side-panel">
+        <h2>Torens</h2>
+        <div id="tower-shop"></div>
+        <div id="tower-info" class="hidden">
+          <h3 id="ti-name">-</h3>
+          <div id="ti-stats"></div>
+          <button id="ti-upgrade">Upgrade</button>
+          <button id="ti-sell">Verkoop</button>
+          <button id="ti-close">Sluiten</button>
+        </div>
+        <div id="help-text">
+          Klik op een toren hieronder en dan op het veld om te plaatsen.
+          Klik op een geplaatste toren om te upgraden of verkopen.
+        </div>
+      </aside>
+    </main>
+
+    <div id="overlay" class="hidden">
+      <div id="overlay-box">
+        <h1 id="overlay-title">Game Over</h1>
+        <p id="overlay-msg"></p>
+        <button id="overlay-restart">Opnieuw spelen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
