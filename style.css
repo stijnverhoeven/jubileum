@@ -4,11 +4,12 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: linear-gradient(160deg, #1b2733, #0d1319);
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   color: #e8eef2;
+  overflow-x: hidden;
 }
 
 #app {
@@ -16,6 +17,8 @@ body {
   flex-direction: column;
   gap: 10px;
   padding: 16px;
+  width: 100%;
+  max-width: 1080px;
 }
 
 #hud {
@@ -60,6 +63,7 @@ body {
 #game-area {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 #game-canvas {
@@ -68,10 +72,16 @@ body {
   border: 2px solid #26394a;
   cursor: crosshair;
   display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  flex: 1 1 480px;
 }
 
 #side-panel {
   width: 230px;
+  flex: 1 1 230px;
+  max-width: 230px;
   background: #14202b;
   border: 1px solid #26394a;
   border-radius: 10px;
@@ -79,6 +89,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+@media (max-width: 700px) {
+  #app { padding: 10px; }
+  #game-area { flex-direction: column; }
+  #game-canvas { flex-basis: auto; }
+  #side-panel { max-width: 100%; }
+  .hud-stat { font-size: 14px; min-width: 0; }
+  #stat-status { min-width: 0; font-size: 12px; }
 }
 
 #side-panel h2 {
